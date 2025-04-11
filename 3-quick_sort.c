@@ -6,18 +6,18 @@
  * @array: The array containing the integers.
  * @i: Index of the first element.
  * @j: Index of the second element.
- * @size: Size of the array.
+ * @size: Size of the entire array.
  *
  * Description: Swaps the values at the given indices in the array
  * and prints the array after the swap.
  */
 static void swap_ints(int *array, int i, int j, size_t size)
 {
-	int temp;
+	int tmp;
 
-	temp = array[i];
+	tmp = array[i];
 	array[i] = array[j];
-	array[j] = temp;
+	array[j] = tmp;
 	print_array(array, size);
 }
 
@@ -55,7 +55,7 @@ static int lomuto_partition(int *array, int low, int high, size_t size)
 }
 
 /**
- * quick_sort_rec - Recursively sorts sub-arrays using quick sort.
+ * quick_sort_rec - Recursively sorts sub-arrays using Quick sort.
  * @array: The array of integers.
  * @low: The starting index of the sub-array.
  * @high: The ending index of the sub-array.
@@ -80,7 +80,7 @@ static void quick_sort_rec(int *array, int low, int high, size_t size)
  *
  * Description: Implements the Quick sort algorithm using the Lomuto
  * partition scheme. The pivot is always the last element of the sub-array.
- * The array is printed after each swap.
+ * The array is printed each time two elements are swapped.
  */
 void quick_sort(int *array, size_t size)
 {
