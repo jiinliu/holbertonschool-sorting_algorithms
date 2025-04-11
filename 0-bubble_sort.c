@@ -6,33 +6,36 @@
  * @array: Pointer to the array to be sorted.
  * @size: Number of elements in the array.
  *
- * Description: After every swap of two elements, the function prints
- *              the current state of the array using print_array.
+ * Description: After every swap of two elements, prints the array.
  */
 void bubble_sort(int *array, size_t size)
 {
-		size_t i, j;
-		int temp;
-		int swapped;
+	size_t i, j;
+	int temp;
+	int swapped;
 
-		if (!array || size < 2)
-				return;
+	if (!array || size < 2)
+	{
+		return;
+	}
 
-		for (i = 0; i < size - 1; i++)
+	for (i = 0; i < size - 1; i++)
+	{
+		swapped = 0;
+		for (j = 0; j < size - i - 1; j++)
 		{
-				swapped = 0;
-				for (j = 0; j < size - i - 1; j++)
-				{
-						if (array[j] > array[j + 1])
-						{
-								temp = array[j];
-								array[j] = array[j + 1];
-								array[j + 1] = temp;
-								print_array(array, size);
-								swapped = 1;
-						}
-				}
-				if (!swapped)
-						break;
+			if (array[j] > array[j + 1])
+			{
+				temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+				print_array(array, size);
+				swapped = 1;
+			}
 		}
+		if (!swapped)
+		{
+			break;
+		}
+	}
 }
