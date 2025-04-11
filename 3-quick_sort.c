@@ -14,7 +14,9 @@
 static void swap_ints(int *array, int i, int j, size_t size)
 {
 	int tmp;
-
+	
+	if (i == j || array[i] == array[j])
+		return;
 	tmp = array[i];
 	array[i] = array[j];
 	array[j] = tmp;
